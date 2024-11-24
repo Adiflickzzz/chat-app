@@ -5,10 +5,11 @@ import { UserButton } from "@clerk/nextjs";
 import { cn } from "../../../lib/utils";
 import { useConversation } from "../../../hooks/useConversation";
 
-type Props = React.PropsWithChildren<{
+type Props = {
   title: string;
   action?: React.ReactNode;
-}>;
+  children: React.ReactNode;
+};
 
 const ItemList = ({ children, title, action: Action }: Props) => {
   const { isActive } = useConversation();

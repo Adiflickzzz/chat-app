@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 import DMConversationItem from "./_components/DMConversationItem";
 import { useRouter } from "next/navigation";
 
-type Props = React.PropsWithChildren<{}>;
+type Props = { children: React.ReactNode };
 
 const ConversationLayout = ({ children }: Props) => {
   const router = useRouter();

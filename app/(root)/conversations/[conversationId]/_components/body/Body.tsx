@@ -6,9 +6,8 @@ import { api } from "../../../../../../convex/_generated/api";
 import { Id } from "../../../../../../convex/_generated/dataModel";
 import Message from "./Message";
 
-type Props = {};
 
-const Body = (props: Props) => {
+const Body = () => {
   const { conversationId } = useConversation();
 
   const messages = useQuery(api.messages.get, {
@@ -31,7 +30,6 @@ const Body = (props: Props) => {
               lastByUser={lastByUser}
               content={message.content}
               createdAt={message._creationTime}
-              type={message.type}
             />
           );
         }

@@ -6,9 +6,8 @@ import { Button } from "../../../../components/ui/button";
 import { Check, X } from "lucide-react";
 import { useMutationState } from "../../../../hooks/useMutationState";
 import { api } from "../../../../convex/_generated/api";
-import { toast } from "sonner";
-import { error } from "console";
 import { ConvexError } from "convex/values";
+import { toast } from "sonner";
 
 type Props = {
   id: Id<"requests">;

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import { Card } from "../../../../../../components/ui/card";
 import { z } from "zod";
 import { useConversation } from "../../../../../../hooks/useConversation";
@@ -14,7 +14,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
 } from "../../../../../../components/ui/form";
 import TextareaAutosize from "react-textarea-autosize";
 import { Button } from "../../../../../../components/ui/button";
@@ -27,7 +26,6 @@ const chatMessageSchema = z.object({
 });
 
 const ChatInput = () => {
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const { conversationId } = useConversation();
 
@@ -42,6 +40,7 @@ const ChatInput = () => {
     },
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleInputChange = (event: any) => {
     const { value, selectionStart } = event.target;
 

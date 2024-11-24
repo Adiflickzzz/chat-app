@@ -19,8 +19,6 @@ const ConversationPage = ({ params: { conversationId } }: Props) => {
   const conversations = useQuery(api.conversations.get);
 
   const [removeFriendDailogOpen, setRemoveFriendDailogOpen] = useState(false);
-  const [deleteGroupDailogOpen, setDeleteGroupDailogOpen] = useState(false);
-  const [leaveGroupDailogOpen, setLeaveGroupDailogOpen] = useState(false);
 
   if (conversation === undefined) {
     return (
@@ -60,25 +58,16 @@ const ConversationPage = ({ params: { conversationId } }: Props) => {
         }
         options={
           conversation.isGroup
-            ? [
-                {
-                  label: "Leave group",
-                  destructive: false,
-                  onClick: () => setLeaveGroupDailogOpen(true),
-                },
-                {
-                  label: "Delete group",
-                  destructive: true,
-                  onClick: () => setDeleteGroupDailogOpen(true),
-                },
-              ]
-            : [
-                {
-                  label: "Remove friend",
-                  destructive: true,
-                  onClick: () => setRemoveFriendDailogOpen(true),
-                },
-              ]
+            ? [{
+                label: "Remove",
+                destructive: true,
+                onClick: () => setRemoveFriendDailogOpen(true),
+              }]
+            : [{
+                label: "Remove friend",
+                destructive: true,
+                onClick: () => setRemoveFriendDailogOpen(true),
+              }]
         }
       />
       <Body />

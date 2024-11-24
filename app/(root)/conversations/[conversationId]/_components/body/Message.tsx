@@ -1,7 +1,6 @@
 import { format } from "date-fns";
 import React from "react";
 import { cn } from "../../../../../../lib/utils";
-import { from } from "svix/dist/openapi/rxjsStub";
 import {
   Avatar,
   AvatarFallback,
@@ -15,7 +14,6 @@ type Props = {
   lastByUser: boolean;
   content: string[];
   createdAt: number;
-  type: string;
 };
 
 const Message = ({
@@ -25,7 +23,6 @@ const Message = ({
   lastByUser,
   senderImage,
   senderName,
-  type,
 }: Props) => {
   const formatTime = (timeStamp: number) => {
     return format(timeStamp, "HH:mm");

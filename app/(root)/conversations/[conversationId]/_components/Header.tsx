@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "../../../../../components/ui/card";
 import Link from "next/link";
-import { ArrowLeft, CircleArrowLeft, Settings } from "lucide-react";
+import { ArrowLeft, Settings } from "lucide-react";
 import {
   Avatar,
   AvatarFallback,
@@ -10,7 +10,6 @@ import {
 import { Button } from "../../../../../components/ui/button";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,

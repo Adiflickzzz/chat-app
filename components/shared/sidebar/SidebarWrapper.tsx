@@ -1,9 +1,8 @@
 import React from "react";
 import { DesktopNav } from "./nav/DesktopNav";
 import { MobileNav } from "./nav/MobileNav";
-import { UserButton } from "@clerk/nextjs";
 
-type Props = React.PropsWithChildren<{}>;
+type Props = { children: React.ReactNode };
 
 const SidebarWrapper = ({ children }: Props) => {
   return (
